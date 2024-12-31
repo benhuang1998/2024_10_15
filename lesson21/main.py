@@ -3,8 +3,9 @@ from flask import Flask
 app = Flask(__name__)
 
 @app.route("/")
-def hello_world():
-    return "<h1>Hello, ben你好!</h1>"
+@app.route("/<strin:name>")
+def index(name:str="None"):
+    return f"<h1>Hello, {name}你好!</h1>"
 
 @app.route('/hello')
 def hello():
